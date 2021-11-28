@@ -1,0 +1,16 @@
+#Options +FollowSymlinks -MultiViews
+#RewriteEngine on
+
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME}.php -f
+#RewriteRule  ^(.*)$ $1.php
+#RewriteRule ^index [L]
+
+#RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
+#RewriteRule .* - [L,R=404]
+
+#RewriteEngine on
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-l
+#RewriteRule ^blog-post/([0-9]+)$ blog-post?&title=$1 [QSA,L]
